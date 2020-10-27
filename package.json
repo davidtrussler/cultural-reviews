@@ -4,7 +4,8 @@
   "description": "My reviews of art, films, books, music and all other cultural curiosities.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "start": "node ./src/server/index.js -p $PORT",
+    "dev": "nodemon ./src/server/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,13 +19,11 @@
   },
   "homepage": "https://github.com/davidtrussler/cultural-reviews#readme",
   "devDependencies": {
+    "nodemon": "^2.0.6",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
     "express": "^4.17.1"
-  }, 
-  "scripts": {
-    "build": "webpack"
   }
 }
