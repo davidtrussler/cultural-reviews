@@ -19,9 +19,7 @@
   },
   "homepage": "https://github.com/davidtrussler/cultural-reviews#readme",
   "devDependencies": {
-    "nodemon": "^2.0.6",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "nodemon": "^2.0.6"
   },
   "dependencies": {
     "express": "^4.17.1"
