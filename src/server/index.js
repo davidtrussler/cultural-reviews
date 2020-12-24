@@ -2,12 +2,14 @@ const express = require('express');
 const app = express(); 
 const port = process.env.PORT || 4000; 
 
+import headerComponent from '../shared/header.mjs'; 
+
 // Fired every time the server receives a request
 app.use(handleRender); 
 
 function generateMarkup(req) {
 	return `
-		<header>header</header>
+		<headerComponent></headerComponent>
 		<main>main</main>
 		<footer>footer</footer>
 	`
