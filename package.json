@@ -1,0 +1,27 @@
+{
+  "name": "cultural-reviews",
+  "version": "1.0.0",
+  "description": "My reviews of art, films, books, music and all other cultural curiosities.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/server/index.js -p $PORT",
+    "dev": "nodemon ./src/server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidtrussler/cultural-reviews.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidtrussler/cultural-reviews/issues"
+  },
+  "homepage": "https://github.com/davidtrussler/cultural-reviews#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
