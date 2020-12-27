@@ -6,30 +6,16 @@ const port = process.env.PORT || 4000;
 
 server.get('*', (req, res) => {
 	const app = vue.createSSRApp({
-	template: `
-		<header>header</header>
-		<main>main</main>
-		<footer>footer</footer>
-	`
+		template: require('fs').readFileSync('./src/templates/index.template.html', 'utf-8'), 
+		data: () => ({
+			title: 'Home'
+		})
 	}); 
 
 	renderer.renderToString(app).then(markup => {
-		res.end(`
-			<!doctype html>
-			<html lang="en-GB">
-				<head>
-					<title>Title</title>
-					<meta charset="utf-8"/>
-					<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				</head>
-
-				<body>
-					${markup}
-				</body>
-			</html>
-		`)
+		res.end(`${markup}`); 
 	}).catch(err => {
-		console.error(err)
+		console.error(err); 
 	}); 
 }); 
 
