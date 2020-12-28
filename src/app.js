@@ -1,6 +1,7 @@
-const Vue = require('vue')
+const Vue = require('vue'); 
+const AppHeader = require('./components/header'); 
 
-module.exports = function createSSRApp (url) {
+module.exports = function createSSRApp(url) {
 	let title = 'Home'; 
 
 	if (url == '/review') {
@@ -8,6 +9,9 @@ module.exports = function createSSRApp (url) {
 	}
 
 	return Vue.createSSRApp({
+		components: {
+			'app-header': AppHeader
+		}, 
 		template: `
 			<!DOCTYPE html>
 			<html lang="en-GB">
@@ -16,7 +20,7 @@ module.exports = function createSSRApp (url) {
 				</head>
 
 				<body>
-					<header>header</header>
+					<app-header></app-header>
 					<main>main</main>
 					<footer>footer</footer>
 				</body>
