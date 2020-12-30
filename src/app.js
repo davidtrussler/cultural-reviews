@@ -11,7 +11,7 @@ const createSSRApp = function(url) {
 
 	let pageTitle = title.toLowerCase(); 
 
-	return Vue.createSSRApp({
+	return Vue.createApp({
 		components: {
 			'app-header': AppHeader, 
 			'app-main': AppMain, 
