@@ -1,12 +1,17 @@
 const Vue = require('vue'); 
 const AppHeader = require('./components/header'); 
+const AppMainHome = require('./components/main_home'); 
 const AppMain = require('./components/main'); 
 const AppFooter = require('./components/footer'); 
 const createSSRApp = function(url) {
-	let title = 'Home'; 
+	let title = '404';
+	let appMain = AppMain; 
 
-	if (url == '/review') {
+	if (url === '/review') {
 		title = 'Review'; 
+	} else if (url === '/') {
+		title = 'Home';
+		appMain = AppMainHome; 
 	}
 
 	let pageTitle = title.toLowerCase(); 
@@ -14,7 +19,7 @@ const createSSRApp = function(url) {
 	return Vue.createApp({
 		components: {
 			'app-header': AppHeader, 
-			'app-main': AppMain, 
+			'app-main': appMain, 
 			'app-footer': AppFooter
 		}, 
 		template: `
