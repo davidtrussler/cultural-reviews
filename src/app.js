@@ -1,9 +1,12 @@
 const Vue = require('vue'); 
+
 const AppHeader = require('./components/header'); 
 const AppMain = require('./components/main'); 
 const AppFooter = require('./components/footer'); 
 
-module.exports = function createSSRApp(url) {
+const { createRouter } = require('./router'); 
+
+function createSSRApp(url) {
 	let title = 'Home'; 
 
 	if (url == '/review') {
@@ -34,3 +37,5 @@ module.exports = function createSSRApp(url) {
 		`
 	})
 }
+
+module.exports = createSSRApp; 
