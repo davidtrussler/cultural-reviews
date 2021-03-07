@@ -21,7 +21,7 @@ const createSSRApp = function(url) {
 		fetchData().then(data => {
 			app = Vue.createApp({
 				data() {
-					return data; 
+					return {reviewsData: data}; 
 				}, 
 				components: {
 					'app-header': AppHeader, 
@@ -37,7 +37,10 @@ const createSSRApp = function(url) {
 
 						<body>
 							<app-header></app-header>
-							<app-main page-title="${pageTitle}"></app-main>
+							<app-main 
+								v-bind:reviewsData=reviewsData
+								page-title="${pageTitle}"
+							></app-main>
 							<app-footer></app-footer>
 						</body>
 					</html>
