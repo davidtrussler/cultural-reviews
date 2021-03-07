@@ -11,6 +11,18 @@ let client = new Client({
 
 client.connect(); 
 
+function fetchData() {
+	return new Promise((resolve, reject) => {
+		resolve({
+			// Fetch all reviews from db
+			reviews: [
+				{id: 1, title: 'A thing'},
+				{id: 2, title: 'Another thing'}
+			]
+		});
+	})
+}
+
 function fetchAllPosts(callback) {
 	const query = 'SELECT titleid, timestamp, title FROM posts ORDER BY timestamp DESC;';
 	
@@ -53,5 +65,6 @@ function fetchSinglePost(postid, callback) {
 
 module.exports = {
   fetchAllPosts, 
-  fetchSinglePost
+  fetchSinglePost, 
+  fetchData
 }
