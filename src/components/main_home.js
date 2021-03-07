@@ -1,22 +1,13 @@
 const AppMainHome = {
-	props: ['pageTitle'], 
-	data() {
-		return {
-			// Fetch all reviews from db
-			reviews: [
-				{id: 1, title: 'A thing'}, 
-				{id: 2, title: 'Another thing'}
-			]
-		}
-	},
+	props: ['pageTitle', 'reviewsData'],
 	template: `
 		<main>
 			<p>This is the main section of the {{ pageTitle }} page.</p>
 
 			<ul>
 				<li
-			    v-for="review in reviews"
-			    :key="review.id"
+			    v-for="review in reviewsData.reviews"
+			    v-bind:key="review.id"
 		    >
 			    {{ review.title }}
 		  	</li>
