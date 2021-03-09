@@ -3,7 +3,7 @@ const AppHeader = require('./components/header');
 const AppMainHome = require('./components/main_home'); 
 const AppMain = require('./components/main'); 
 const AppFooter = require('./components/footer'); 
-const {fetchData} = require('./db/index'); 
+const {fetchData} = require('./db/index');
 const createSSRApp = function(url) {
 	let title = '404';
 	let appMain = AppMain; 
@@ -18,8 +18,8 @@ const createSSRApp = function(url) {
 	let pageTitle = title.toLowerCase(); 
 
 	return new Promise((resolve, reject) => {
-		fetchData().then(data => {
-			app = Vue.createApp({
+		fetchData(url).then(data => {
+			const app = Vue.createApp({
 				data() {
 					return {reviewsData: data}; 
 				}, 
