@@ -9,7 +9,7 @@ const createSSRApp = function(url) {
 	let title = '404';
 	let appMain = AppMain; 
 
-	if (url.indexOf('/review') === 0) {
+	if (url.indexOf('/review/') > -1) {
 		title = 'Review'; 
 		appMain = AppMainReview; 
 	} else if (url === '/') {

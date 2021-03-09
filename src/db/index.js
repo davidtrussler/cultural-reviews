@@ -15,7 +15,7 @@ const fetchData = function(url) {
 	return new Promise((resolve, reject) => {
 		let query; 
 
-		if (url.indexOf('/review') === 0) {
+		if (url.indexOf('/review/') > -1) {
 			let id = url.split('review/')[1];
 			query = 'SELECT * FROM reviews WHERE id=' + id;
 
