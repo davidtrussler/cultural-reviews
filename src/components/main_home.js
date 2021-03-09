@@ -6,10 +6,10 @@ const AppMainHome = {
 
 			<ul>
 				<li
-			    v-for="review in reviewsData.reviews"
+			    v-for="review in reviewsData"
 			    v-bind:key="review.id"
 		    >
-			    {{ review.title }}
+			    {{review.id}} | {{review.title}} | {{review.medium}}
 		  	</li>
 	  	</ul>
 		</main>
