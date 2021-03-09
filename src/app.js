@@ -1,15 +1,17 @@
 const Vue = require('vue'); 
 const AppHeader = require('./components/header'); 
-const AppMainHome = require('./components/main_home'); 
 const AppMain = require('./components/main'); 
+const AppMainHome = require('./components/main_home'); 
+const AppMainReview = require('./components/main_review'); 
 const AppFooter = require('./components/footer'); 
 const {fetchData} = require('./db/index');
 const createSSRApp = function(url) {
 	let title = '404';
 	let appMain = AppMain; 
 
-	if (url === '/review') {
+	if (url.indexOf('/review') === 0) {
 		title = 'Review'; 
+		appMain = AppMainReview; 
 	} else if (url === '/') {
 		title = 'Home';
 		appMain = AppMainHome; 
