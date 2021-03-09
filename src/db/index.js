@@ -1,6 +1,6 @@
 require('dotenv').config(); 
 
-const { Client } = require('pg'); 
+const {Client} = require('pg'); 
 
 let client = new Client({
 	// Connect to database on main app
@@ -11,72 +11,34 @@ let client = new Client({
 
 client.connect(); 
 
-function fetchData(url) {
-	if (url === '/') {
-		let query = 'SELECT id, title, medium FROM reviews ORDER BY timestamp ASC;';
+const fetchData = function(url) {
+	return new Promise((resolve, reject) => {
+		let query; 
 
-		return new Promise((resolve, reject) => {
-			client.query(query, (err, res) => {
-				if (err) {
-					console.log('error: ', err); 
-					reject(err); 
-				} else {
-					resolve(res.rows);
-				}
-			})
-		}).catch(reject => {
-			console.log('reject: ', reject); 
-			return reject;
-		})
-	} else {
-		return new Promise((resolve, reject) => {
+		if (url.indexOf('/review') === 0) {
+			let id = url.split('review/')[1];
+			query = 'SELECT * FROM reviews WHERE id=' + id;
+
+			console.log('query: ', query); 
+		} else if (url === '/') {
+			query = 'SELECT id, title, medium FROM reviews ORDER BY timestamp ASC;';
+		} else {
 			resolve(); 
+		}
+
+		client.query(query, (err, res) => {
+			if (err) {
+				console.log('err: ', err); 
+				reject(err); 
+			} else {
+				// console.log('res: ', res);
+				resolve(res.rows);
+			}
 		})
-	}
+	}).catch(reject => {
+		console.log('reject: ', reject); 
+		return reject;
+	})
 }
 
-// function fetchAllPosts(callback) {
-// 	const query = 'SELECT titleid, timestamp, title FROM posts ORDER BY timestamp DESC;';
-	
-// 	return new Promise((resolve, reject) => {
-// 		client.query(query, (err, res) => {
-// 			if (err) {
-// 				reject(err); 
-// 			} else {
-// 				resolve(res.rows); 
-// 			}
-// 		})
-// 	}).then((response) => {
-// 		callback(
-// 			{posts: response}
-// 		)
-// 	}).catch(reject => {
-// 		return reject;
-// 	})
-// }
-
-// function fetchSinglePost(postid, callback) {
-// 	const query = 'SELECT timestamp, title, body FROM posts WHERE postid=' + postid;
-	
-// 	return new Promise((resolve, reject) => {
-// 		client.query(query, (err, res) => {
-// 			if (err) {
-// 				reject(err); 
-// 			} else {
-// 				resolve(res.rows); 
-// 			}
-// 		})
-// 	}).then((response) => {
-// 		callback(
-// 			response[0]
-// 		)
-// 	}).catch(reject => {
-// 		return reject;
-// 	})
-// }
-
-module.exports = {
-  // fetchAllPosts, 
-  // fetchSinglePost, 
-  fetchData
-}
+module.exports = {fetchData};
