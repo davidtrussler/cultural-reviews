@@ -51,7 +51,9 @@ const createSSRApp = function(url) {
 
 			resolve(app); 
 		}); 
-	}).catch(reject => console.log(reject)); 
+	}).catch(reject => {
+		console.log(reject);
+	})
 }
 
 module.exports = createSSRApp; 
