@@ -3,10 +3,7 @@ require('dotenv').config();
 const {Client} = require('pg'); 
 
 let client = new Client({
-	// Connect to database on main app
 	connectionString: process.env.DATABASE_URL
-	// Connect to database on Heroku Preview App
-	// connectionString: process.env.HEROKU_POSTGRESQL_<NAME>_URL
 });
 
 client.connect(); 
@@ -18,8 +15,6 @@ const fetchData = function(url) {
 		if (url.indexOf('/review/') > -1) {
 			let id = url.split('review/')[1];
 			query = 'SELECT * FROM reviews WHERE id=' + id;
-
-			console.log('query: ', query); 
 		} else if (url === '/') {
 			query = 'SELECT id, title, medium FROM reviews ORDER BY timestamp ASC;';
 		} else {
