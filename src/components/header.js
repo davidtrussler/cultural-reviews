@@ -1,7 +1,8 @@
 const AppHeader = {
 	template: `
 		<header>
-			<p>This is the common header of the site</p>
+			<h1>Cultural Reviews</h1>
+			<h2>A trip through my cultural life</h2>
 		</header>
 	`	
 }
