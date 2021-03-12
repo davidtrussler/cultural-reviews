@@ -1,7 +1,7 @@
 const AppFooter = {
 	template: `
 		<footer>
-			<p>This is the common footer of the site</p>
+			<p>&#169; David Trussler 2021</p>
 		</footer>
 	`	
 }
