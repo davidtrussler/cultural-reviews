@@ -42,7 +42,6 @@ const createSSRApp = function(url) {
 							<app-header></app-header>
 							<app-main 
 								v-bind:reviewsData=reviewsData
-								page-title="${pageTitle}"
 							></app-main>
 							<app-footer></app-footer>
 						</body>
