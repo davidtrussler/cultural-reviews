@@ -1,5 +1,9 @@
+const AppListing = require('./listing');
 const AppMainHome = {
 	props: ['pageTitle', 'reviewsData'],
+	components: {
+		'app-listing': AppListing
+	},
 	template: `
 		<main>
 			<section>
@@ -12,7 +16,10 @@ const AppMainHome = {
 						v-for="review in reviewsData"
 						v-bind:key="review.id"
 					>
-						<a v-bind:href="'/review/' + review.id">{{review.title}} | {{review.medium}}</a>
+						<app-listing
+							v-bind:review=review
+						>
+						</app-listing>
 					</li>
 				</ul>
 			</section>
