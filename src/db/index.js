@@ -16,9 +16,9 @@ const fetchData = function(url) {
 			let id = url.split('review/')[1];
 			query = 'SELECT * FROM reviews WHERE id=' + id;
 		} else if (url === '/') {
-			query = 'SELECT id, title, medium FROM reviews ORDER BY timestamp ASC;';
+			query = 'SELECT id, title, medium, author, writer, director, venue, artist FROM reviews ORDER BY timestamp ASC;';
 		} else {
-			resolve(); 
+			resolve();
 		}
 
 		client.query(query, (err, res) => {
