@@ -35,6 +35,7 @@ const createSSRApp = function(url) {
 					<html lang="en-GB">
 						<head>
 							<title>${title}</title>
+							<meta charset="utf-8"/>
 						</head>
 
 						<body>
