@@ -17,8 +17,6 @@ const createSSRApp = function(url) {
 		appMain = AppMainHome; 
 	}
 
-	let pageTitle = title.toLowerCase(); 
-
 	return new Promise((resolve, reject) => {
 		fetchData(url).then(data => {
 			const app = Vue.createApp({

@@ -1,6 +1,6 @@
 const AppListing = require('./listing');
 const AppMainHome = {
-	props: ['pageTitle', 'reviewsData'],
+	props: ['reviewsData'],
 	components: {
 		'app-listing': AppListing
 	},
