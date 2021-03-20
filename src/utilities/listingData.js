@@ -4,6 +4,30 @@ class ListingData {
 	}
 
 	getData() {
+		const formatDate = (rawDate, format) => {
+			let formattedDate = '';
+
+			if (rawDate) {
+				let date = new Date(rawDate);
+				let options = { 
+					year: 'numeric', 
+					month: 'long', 
+					day: 'numeric' 
+				};
+
+				switch (format) {
+					case 'y':
+						formattedDate = date.getFullYear();
+					break; 
+
+					default:
+						formattedDate = new Intl.DateTimeFormat('en-GB', options).format(date); 
+				}
+			}
+
+			return formattedDate; 
+		}; 
+
 		const createExtraString = (extra) => {
 			let string = '';
 
@@ -37,7 +61,7 @@ class ListingData {
 			case 'book':
 				medium = 'Book';
 				extra = `By ${createExtraString(this.review.author)}`;
-				extra_2 = `<span>${this.review.publisher}</span>, <date>${this.review.date_publication}</date>`;
+				extra_2 = `<span>${this.review.publisher}</span>, <date>${formatDate(this.review.date_publication, 'y')}</date>`;
 				break;
 
 			case 'theatre':
@@ -45,33 +69,33 @@ class ListingData {
 				extra = `By ${createExtraString(this.review.writer)}`;
 				extra_2 = `Directed by ${createExtraString(this.review.director)}`;
 				extra_3 = this.review.venue;
-				extra_4 = `<date>${this.review.date_opening}</date> to <date>${this.review.date_closing}</date>`;
+				extra_4 = `<date>${formatDate(this.review.date_opening)}</date> to <date>${formatDate(this.review.date_closing)}</date>`;
 				break;
 
 			case 'cinema':
 				medium = 'Cinema';
 				extra = `Directed by ${createExtraString(this.review.director)}`;
 				extra_2 = `With ${createExtraString(this.review.actors)}`;
-				extra_3 = `${this.review.country}, <date>${this.review.date_release}</date>`;
+				extra_3 = `${this.review.country}, <date>${formatDate(this.review.date_release, 'y')}</date>`;
 				extra_4 = `${this.review.running_time} minutes`; 
 				break;
 
 			case 'art_visual':
 				medium = 'Visual art';
 				extra = this.review.venue;
-				extra_2 = `<date>${this.review.date_opening}</date> to <date>${this.review.date_closing}</date>`;
+				extra_2 = `<date>${formatDate(this.review.date_opening)}</date> to <date>${formatDate(this.review.date_closing)}</date>`;
 				break;
 
 			case 'music_performed':
 				medium = 'Live music';
 				extra = this.review.venue;
-				extra_2 = `<date>${this.review.date_event}</date>`;
+				extra_2 = `<date>${formatDate(this.review.date_event)}</date>`;
 				break;
 
 			case 'music_recorded':
 				medium = 'Recorded music';
 				extra = `By ${createExtraString(this.review.artist)}`;
-				extra_2 = `${this.review.label}, ${this.review.date_release}`;
+				extra_2 = `${this.review.label}, ${formatDate(this.review.date_release, 'y')}`;
 				break;
 		}
 
