@@ -9,12 +9,13 @@ const AppListing = {
 			id: values.id,
 			medium: values.medium,
 			title: values.title,
-			extra: values.extra
+			extra: values.extra, 
+			img_thumb: values.img_thumb
 		};
 	},
 	template: `
 		<a v-bind:href="'/review/' + id">
-			<img src="https://picsum.photos/id/1015/60"/>
+			<img v-bind:src="img_thumb" width="60"/>
 			<span>{{medium}}</span>
 			<span>{{title}}</span>
 			<span v-html="extra"></span>
