@@ -29,7 +29,6 @@ const createSSRApp = function(url) {
 					'app-footer': AppFooter
 				}, 
 				template: `
-					<!DOCTYPE html>
 					<html lang="en-GB">
 						<head>
 							<title>${title}</title>

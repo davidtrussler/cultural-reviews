@@ -9,12 +9,15 @@ server.use(express.static('assets'));
 server.get('*', (req, res) => {
 	createSSRApp(req.url).then(app => {
 		renderer.renderToString(app).then(markup => {
-			res.end(`${markup}`); 
+			res.end(`
+				<!DOCTYPE html>
+				${markup}
+			`);
 		}).catch(err => {
 			console.error(err); 
-		}); 
+		});
 	})
-}); 
+});
 
 server.listen(port, () => {
 	console.log(`Server is listening on port: ${port}`)
