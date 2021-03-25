@@ -12,6 +12,7 @@ const AppMainReview = {
 			extra_2: values.extra_2, 
 			extra_3: values.extra_3, 
 			extra_4: values.extra_4, 
+			img_main: values.img_main
 		};
 	},
 	template: `
@@ -21,7 +22,7 @@ const AppMainReview = {
 			<article>
 				<p>{{medium}}</p>
 
-				<img src="https://picsum.photos/id/1015/300/200"/>
+				<img v-bind:src="img_main" width="100%"/>
 
 				<ul>
 					<li>{{title}}</li>
