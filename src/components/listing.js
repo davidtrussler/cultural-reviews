@@ -15,7 +15,7 @@ const AppListing = {
 	},
 	template: `
 		<a v-bind:href="'/review/' + id">
-			<img v-bind:src="img_thumb" width="60"/>
+			<img v-bind:src="img_thumb" alt="" width="60"/>
 			<span>{{medium}}</span>
 			<span>{{title}}</span>
 			<span v-html="extra"></span>

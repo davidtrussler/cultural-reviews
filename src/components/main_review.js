@@ -22,7 +22,7 @@ const AppMainReview = {
 			<article>
 				<p>{{medium}}</p>
 
-				<img v-bind:src="img_main" width="100%"/>
+				<img v-bind:src="img_main" alt="" style="width:100%"/>
 
 				<ul>
 					<li>{{title}}</li>
