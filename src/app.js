@@ -17,8 +17,6 @@ const createSSRApp = function(url) {
 		appMain = AppMainHome; 
 	}
 
-	let pageTitle = title.toLowerCase(); 
-
 	return new Promise((resolve, reject) => {
 		fetchData(url).then(data => {
 			const app = Vue.createApp({
@@ -31,17 +29,16 @@ const createSSRApp = function(url) {
 					'app-footer': AppFooter
 				}, 
 				template: `
-					<!DOCTYPE html>
 					<html lang="en-GB">
 						<head>
 							<title>${title}</title>
+							<meta charset="utf-8"/>
 						</head>
 
 						<body>
 							<app-header></app-header>
 							<app-main 
 								v-bind:reviewsData=reviewsData
-								page-title="${pageTitle}"
 							></app-main>
 							<app-footer></app-footer>
 						</body>
