@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./src/server/index.js -p $PORT",
     "dev": "nodemon ./src/server/index.js", 
-    "cy:run": "cypress run"
+    "test": "./node_modules/cypress/bin/cypress run"
   },
   "repository": {
     "type": "git",
