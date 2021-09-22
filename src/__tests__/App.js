@@ -4,11 +4,15 @@
 const {Client} = require('pg')
 const {fetchData} = require('../db/index')
 const app = require('../app')
+const AppHeader = require('../components/header');
 
 jest.mock('pg')
 jest.mock('../db/index')
+jest.mock('../components/header')
 
 describe('App', () => {
+	AppHeader.getHtml.mockImplementation(() => {return `the header`})
+
 	fetchData.mockResolvedValue(`
 		{
 		  "reviews": [

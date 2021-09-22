@@ -1,4 +1,4 @@
-// const AppHeader = require('./components/header');
+const AppHeader = require('./components/header');
 // const AppMain = require('./components/main');
 // const AppMainHome = require('./components/main_home');
 // const AppMainReview = require('./components/main_review');
@@ -35,7 +35,7 @@ const buildMarkup = function(data) {
 			</head>
 
 			<body>
-				<header>the header</header>
+				<header>${AppHeader.getHtml()}</header>
 				<main>the main section</main>
 				<footer>the footer</footer>
 			</body>
