@@ -1,6 +1,8 @@
 /**
  * Constructs the string to be rendered by the server 
  */
+// const jsdom = require("jsdom");
+// const {JSDOM} = jsdom;
 const {Client} = require('pg')
 const {fetchData} = require('../db/index')
 const app = require('../app')
@@ -11,7 +13,13 @@ jest.mock('../db/index')
 jest.mock('../components/header')
 
 describe('App', () => {
-	AppHeader.getHtml.mockImplementation(() => {return `the header`})
+	AppHeader.getHtml.mockImplementation(() => {return (
+			`
+				<h1>The main heading</h1>
+				<h2>A subheading</h2>
+			`
+		)
+	})
 
 	fetchData.mockResolvedValue(`
 		{
@@ -35,25 +43,18 @@ describe('App', () => {
 	`)
 
 	it('Constructs the string to be send to the server', () => {
-		let expected = `
-			<html lang="en-GB">
-				<head>
-					<title>The title</title>
-					<meta charset="utf-8"/>
-				</head>
-
-				<body>
-					<header>the header</header>
-					<main>the main section</main>
-					<footer>the footer</footer>
-				</body>
-			</html>		
-		`
-
 		return fetchData().then((data) => {
-			let html = app.buildMarkup(data).replace(/[^a-zA-Z0-9]/g, '')
+			// const dom = new JSDOM(app.buildMarkup(data))
+			// const { window } = new JSDOM(app.buildMarkup(data))
 
-			expect(html).toMatch(expected.replace(/[^a-zA-Z0-9]/g, ''))
+			// expect(window.title).toBe('The title')
+			// expect(window.querySelector('header').textContent).toContain('The main heading')
+
+			document.documentElement.innerHTML = app.buildMarkup(data)
+
+			expect(document.title).toBe('The title')
+			expect(document.querySelector('header').textContent).toContain('The main heading')
+			expect(document.querySelector('header').textContent).toContain('A subheading')
 		})
 	})
 })
