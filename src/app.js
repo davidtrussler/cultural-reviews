@@ -1,5 +1,5 @@
 const AppHeader = require('./components/header');
-// const AppMain = require('./components/main');
+const AppMain = require('./components/main');
 // const AppMainHome = require('./components/main_home');
 // const AppMainReview = require('./components/main_review');
 const AppFooter = require('./components/footer');
@@ -36,7 +36,7 @@ const buildMarkup = function(data) {
 
 			<body>
 				<header>${AppHeader.getHtml()}</header>
-				<main>the main section</main>
+				<main>${AppMain.getHtml()}</main>
 				<footer>${AppFooter.getHtml()}</footer>
 			</body>
 		</html>

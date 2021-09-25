@@ -1,12 +1,9 @@
 const AppMain = {
-	props: ['pageTitle'], 
-	template: `
-		<main>
-			<p>This is the main section of the {{ pageTitle }} page</p>
-
-			<h1>404</h1>
-		</main>
-	`	
+	getHtml() {
+		return (
+			`<p>This is the main section of the site</p>`
+		)
+	}
 }
 
 module.exports = AppMain;
