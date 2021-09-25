@@ -2,7 +2,7 @@ const AppHeader = require('./components/header');
 // const AppMain = require('./components/main');
 // const AppMainHome = require('./components/main_home');
 // const AppMainReview = require('./components/main_review');
-// const AppFooter = require('./components/footer');
+const AppFooter = require('./components/footer');
 const {fetchData} = require('./db/index');
 
 const createSSRApp = function(url) {
@@ -37,7 +37,7 @@ const buildMarkup = function(data) {
 			<body>
 				<header>${AppHeader.getHtml()}</header>
 				<main>the main section</main>
-				<footer>the footer</footer>
+				<footer>${AppFooter.getHtml()}</footer>
 			</body>
 		</html>
 	`
