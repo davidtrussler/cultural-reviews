@@ -1,20 +1,19 @@
 const AppHeader = require('./components/header');
 const AppMain = require('./components/main');
-// const AppMainHome = require('./components/main_home');
-// const AppMainReview = require('./components/main_review');
 const AppFooter = require('./components/footer');
 const {fetchData} = require('./db/index');
 
+let page = '';
+
 const createSSRApp = function(url) {
-	let title = '404';
-	// let appMain = AppMain;
+	// let title = '404';
 
 	if (url.indexOf('/review/') > -1) {
-		title = 'Review'; 
-		// appMain = AppMainReview;
+		// title = 'Review';
+		page = 'review';
 	} else if (url === '/') {
-		title = 'Home';
-		// appMain = AppMainHome;
+		// title = 'Home';
+		page = 'home';
 	}
 
 	return new Promise((resolve, reject) => {
@@ -36,7 +35,7 @@ const buildMarkup = function(data) {
 
 			<body>
 				<header>${AppHeader.getHtml()}</header>
-				<main>${AppMain.getHtml()}</main>
+				<main>${AppMain.getHtml(page)}</main>
 				<footer>${AppFooter.getHtml()}</footer>
 			</body>
 		</html>

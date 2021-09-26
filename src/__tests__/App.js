@@ -15,13 +15,12 @@ jest.mock('../components/main')
 jest.mock('../components/footer')
 
 describe('App', () => {
-	AppHeader.getHtml.mockImplementation(() => {return `<h1>The main heading</h1><h2>A subheading</h2>`})
-	AppMain.getHtml.mockImplementation(() => {return `<p>The main section</p>`})
-	AppFooter.getHtml.mockImplementation(() => {return `<p>The footer</p>`})
+	it('Constructs the base string to be send to the server', () => {
+		AppHeader.getHtml.mockImplementation(() => {return `<h1>The main heading</h1><h2>A subheading</h2>`})
+		AppMain.getHtml.mockImplementation(() => {return `<p>The main section</p>`})
+		AppFooter.getHtml.mockImplementation(() => {return `<p>The footer</p>`})
+		fetchData.mockResolvedValue()
 
-	fetchData.mockResolvedValue()
-
-	it('Constructs the string to be send to the server', () => {
 		return fetchData().then(() => {
 			document.documentElement.innerHTML = app.buildMarkup()
 

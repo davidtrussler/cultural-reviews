@@ -1,9 +1,23 @@
 const AppMain = {
-	getHtml() {
+	getHtml(page) {
+		console.log('getHtml!')
+		console.log('page: ', page)
+
+		switch (page) {
+			case 'home':
+				return this.getPage(page)
+				break;
+			default:
+				return this.getPage()
+		}
+	},
+
+	getPage() {
 		return (
-			`<p>This is the main section of the site</p>`
+			`<p>404: This page was not found</p>`
 		)
 	}
 }
 
-module.exports = AppMain;
+exports.getHtml = AppMain.getHtml
+exports.getPage = AppMain.getPage

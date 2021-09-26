@@ -1,7 +1,21 @@
-const main = require('../components/main')
+const AppMain = require('../components/main')
 
 describe('Main', () => {
-	it('Does nothing', () => {
-		expect(1).toBe(1)
+	let html
+
+	it('Returns the correct markup for the supplied value for the page', () => {
+		// Arrange
+		AppMain.getPage = jest.fn()
+		AppMain.getPage.mockImplementation((page) => {
+			if (!page) {
+				return `<p>404</p>`
+			}
+		})
+
+		// Act
+		html = AppMain.getHtml()
+
+		// Assert
+		expect(html).toBe(`<p>404</p>`)
 	})
 })
