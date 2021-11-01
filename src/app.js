@@ -1,9 +1,10 @@
+const AppHead = require('./components/head');
 const AppHeader = require('./components/header');
 const AppMain = require('./components/main');
 const AppFooter = require('./components/footer');
 const {fetchData} = require('./db/index');
 
-let page = '';
+let page;
 
 const createSSRApp = function(url) {
 	// let title = '404';
@@ -28,11 +29,7 @@ const createSSRApp = function(url) {
 const buildMarkup = function(data) {
 	let html = `
 		<html lang="en-GB">
-			<head>
-				<title>The title</title>
-				<meta charset="utf-8"/>
-			</head>
-
+			<head>${AppHead.getHtml()}</head>
 			<body>
 				<header>${AppHeader.getHtml()}</header>
 				<main>${AppMain.getHtml(page)}</main>
