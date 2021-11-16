@@ -1,19 +1,41 @@
 const AppHead = require('../components/head')
+let html;
+let page; 
 
 describe('Head', () => {
-	let html
-
-	it('Returns the correct markup when called', () => {
+	it('Returns the correct markup when the error page is called', () => {
 		// Arrange
-		AppHead.getHtml = jest.fn()
-		AppHead.getHtml.mockImplementation(() => {
-			return `<title>The title</title>`
-		})
+		page = 'error';
 
 		// Act
-		html = AppHead.getHtml()
+		html = AppHead.getHtml(page);
+		document.head.innerHTML = html;
 
 		// Assert
-		expect(html).toBe(`<title>The title</title>`)
+		expect(document.querySelector('head').querySelector('title').textContent).toBe('Error')
+	})
+
+	it('Returns the correct markup when the home page is called', () => {
+		// Arrange
+		page = 'home';
+
+		// Act
+		html = AppHead.getHtml(page);
+		document.head.innerHTML = html;
+
+		// Assert
+		expect(document.querySelector('head').querySelector('title').textContent).toBe('Home')
+	})
+
+	it('Returns the correct markup when the reviews page is called', () => {
+		// Arrange
+		page = 'review';
+
+		// Act
+		html = AppHead.getHtml(page);
+		document.head.innerHTML = html;
+
+		// Assert
+		expect(document.querySelector('head').querySelector('title').textContent).toBe('Review')
 	})
 })

@@ -4,16 +4,12 @@ const AppMain = require('./components/main');
 const AppFooter = require('./components/footer');
 const {fetchData} = require('./db/index');
 
-let page;
+let page = 'error';
 
 const createSSRApp = function(url) {
-	// let title = '404';
-
 	if (url.indexOf('/review/') > -1) {
-		// title = 'Review';
 		page = 'review';
 	} else if (url === '/') {
-		// title = 'Home';
 		page = 'home';
 	}
 
@@ -29,7 +25,7 @@ const createSSRApp = function(url) {
 const buildMarkup = function(data) {
 	let html = `
 		<html lang="en-GB">
-			<head>${AppHead.getHtml()}</head>
+			<head>${AppHead.getHtml(page)}</head>
 			<body>
 				<header>${AppHeader.getHtml()}</header>
 				<main>${AppMain.getHtml(page)}</main>

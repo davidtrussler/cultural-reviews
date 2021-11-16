@@ -1,8 +1,21 @@
 const	AppHead = {
-	getHtml() {
+	getHtml(page) {
+		let title;
+
+		switch(page) {
+			case 'home':
+				title = 'Home'
+				break;
+			case 'review':
+				title = 'Review'
+				break;
+			default:
+				title = 'Error'
+		}
+
 		return (
 			`
-				<title>The title of the page</title>
+				<title>${title}</title>
 				<meta charset="utf-8"/>
 			`
 		)
