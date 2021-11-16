@@ -4,13 +4,15 @@ const AppMain = require('./components/main');
 const AppFooter = require('./components/footer');
 const {fetchData} = require('./db/index');
 
-let page = 'error';
+let page;
 
 const createSSRApp = function(url) {
 	if (url.indexOf('/review/') > -1) {
 		page = 'review';
 	} else if (url === '/') {
 		page = 'home';
+	} else {
+		page = 'error';
 	}
 
 	return new Promise((resolve, reject) => {
@@ -28,7 +30,7 @@ const buildMarkup = function(data) {
 			<head>${AppHead.getHtml(page)}</head>
 			<body>
 				<header>${AppHeader.getHtml()}</header>
-				<main>${AppMain.getHtml(page)}</main>
+				<main>${AppMain.getHtml(page, data)}</main>
 				<footer>${AppFooter.getHtml()}</footer>
 			</body>
 		</html>

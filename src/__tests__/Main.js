@@ -1,21 +1,21 @@
 const AppMain = require('../components/main')
 
-describe('Main', () => {
-	let html
+let html;
+let page;
+let main = document.createElement('main');
 
-	it('Returns the correct markup for the supplied value for the page', () => {
+document.body.append(main);
+
+describe('Main', () => {
+	it('Returns the correct markup when the error page is called', () => {
 		// Arrange
-		AppMain.getPage = jest.fn()
-		AppMain.getPage.mockImplementation((page) => {
-			if (!page) {
-				return `<p>404</p>`
-			}
-		})
+		page = 'error';
 
 		// Act
-		html = AppMain.getHtml()
+		html = AppMain.getHtml(page);
+		document.body.querySelector('main').innerHTML = html;
 
 		// Assert
-		expect(html).toBe(`<p>404</p>`)
+		expect(document.querySelector('main').textContent).toBe('404: This page was not found')
 	})
 })

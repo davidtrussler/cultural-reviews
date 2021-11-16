@@ -1,23 +1,22 @@
 const AppMain = {
-	getHtml(page) {
-		console.log('getHtml!')
-		console.log('page: ', page)
-
+	getHtml(page, data) {
 		switch (page) {
 			case 'home':
-				return this.getPage(page)
+				return (
+					'<p>This is the home page</p>'
+				)
+				break;
+			case 'review':
+				return (
+					'<p>This is a review page</p>'
+				)
 				break;
 			default:
-				return this.getPage()
+				return (
+					`<p>404: This page was not found</p>`
+				)
 		}
-	},
-
-	getPage() {
-		return (
-			`<p>404: This page was not found</p>`
-		)
 	}
 }
 
 exports.getHtml = AppMain.getHtml
-exports.getPage = AppMain.getPage
