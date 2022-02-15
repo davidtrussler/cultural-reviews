@@ -1,13 +1,12 @@
 const Listing = require('./listing');
+const Review = require('./review');
 
 const AppMain = {
 	getHtml(page, data) {
 		const getAllReviews = function(data) {
 			let html = '';
 			let reviews = JSON.parse(data).reviews;
-			let listing
-
-			console.log('reviews: ', reviews);
+			let listing;
 
 			reviews.map((review) => {
 				listing = new Listing(review)
@@ -15,6 +14,12 @@ const AppMain = {
 			})
 
 			return html
+		}
+
+		const getReview = function(data) {
+			let review = new Review(data)
+
+			return review.getReview();
 		}
 
 		switch (page) {
@@ -32,7 +37,10 @@ const AppMain = {
 				break;
 			case 'review':
 				return (
-					'<p>This is a review page</p>'
+					`<p><a href="/">Back to reviews</a></p>
+					<article>
+						${getReview(data)}
+					</article>`
 				)
 				break;
 			default:

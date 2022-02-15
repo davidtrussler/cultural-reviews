@@ -161,19 +161,19 @@ const results =
 // 	connectionString: process.env.DATABASE_URL
 // });
 
-// client.connect(); 
+// client.connect();
 
 const fetchData = function(url) {
-	console.log('fetchData!')
-	console.log('url: ', url)
-
 	return new Promise((resolve, reject) => {
-		let query; 
+		// let query;
+		let reviews = JSON.parse(results).reviews;
 
 		if (url.indexOf('/review/') > -1) {
-			// let id = url.split('review/')[1];
+			let id = parseInt(url.split('review/')[1]);
+			let review = reviews.filter(review => review.id === id)[0];
+
 			// query = 'SELECT * FROM reviews WHERE id=' + id;
-			resolve(results)
+			resolve(review)
 		} else if (url === '/') {
 			// query = 'SELECT id, title, medium, author, writer, director, venue, artist, img_thumb FROM reviews ORDER BY timestamp ASC;';
 			resolve(results)
