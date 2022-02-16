@@ -17,6 +17,7 @@ const	AppHead = {
 			`
 				<title>${title}</title>
 				<meta charset="utf-8"/>
+				<link rel="stylesheet" type="text/css" href="/styles/app.css"/>
 			`
 		)
 	}
