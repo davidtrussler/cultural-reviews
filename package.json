@@ -13,7 +13,7 @@
     "url": "git+https://github.com/davidtrussler/cultural-reviews.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "David Trussler",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/davidtrussler/cultural-reviews/issues"
@@ -24,10 +24,8 @@
     "nodemon": "^2.0.6"
   },
   "dependencies": {
-    "@vue/server-renderer": "^3.0.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "pg": "^8.5.1",
-    "vue": "^3.0.4"
+    "pg": "^8.5.1"
   }
 }
