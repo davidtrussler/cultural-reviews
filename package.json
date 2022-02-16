@@ -5,27 +5,27 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/server/index.js -p $PORT",
-    "dev": "nodemon ./src/server/index.js"
+    "dev": "nodemon ./src/server/index.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/davidtrussler/cultural-reviews.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "David Trussler",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/davidtrussler/cultural-reviews/issues"
   },
   "homepage": "https://github.com/davidtrussler/cultural-reviews#readme",
   "devDependencies": {
+    "jest": "^26.6.3",
     "nodemon": "^2.0.6"
   },
   "dependencies": {
-    "@vue/server-renderer": "^3.0.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "pg": "^8.5.1",
-    "vue": "^3.0.4"
+    "pg": "^8.5.1"
   }
 }

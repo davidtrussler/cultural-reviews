@@ -1,9 +1,9 @@
 const AppFooter = {
-	template: `
-		<footer>
-			<p>&#169; David Trussler 2021</p>
-		</footer>
-	`	
+	getHtml() {
+		return (
+			`<p>&#169; David Trussler 2021</p>`
+		)
+	}
 }
 
 module.exports = AppFooter;

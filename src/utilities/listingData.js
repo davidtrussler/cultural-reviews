@@ -21,11 +21,11 @@ class ListingData {
 					break;
 
 					case 'y-m-d': 
-						formattedDate = `${rawDate.getFullYear()}-${(rawDate.getMonth() + 1).toString().padStart(2, '0')}-${rawDate.getDate().toString().padStart(2, '0')}`;
+						formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
 					break;
 
 					default:
-						formattedDate = rawDate.toLocaleDateString('en-GB', options);
+						formattedDate = date.toLocaleDateString('en-GB', options);
 				}
 			}
 
@@ -83,7 +83,7 @@ class ListingData {
 				extra = `Directed by ${createExtraString(this.review.director)}`;
 				extra_2 = `With ${createExtraString(this.review.actors)}`;
 				extra_3 = `${this.review.country}, <time datetime="${formatDate(this.review.date_release, 'y-m-d')}">${formatDate(this.review.date_release, 'y')}</time>`;
-				extra_4 = `${this.review.running_time} minutes`; 
+				extra_4 = `${this.review.running_time} minutes`;
 				break;
 
 			case 'art_visual':
