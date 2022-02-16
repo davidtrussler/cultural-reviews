@@ -133,7 +133,7 @@ const results =
 		{
 			"id": 6,
 			"medium": "music_recorded",
-			"title": "A Glorious Monster",
+			"title": "Open the Gates",
 			"author": "", 
 			"publisher": "",
 			"date_publication": "",
@@ -141,18 +141,18 @@ const results =
 			"actors": "", 
 			"running_time": "", 
 			"country": "", 
-			"date_release": "2018-01-01", 
+			"date_release": "2021-11-12",
 			"venue": "", 
 			"date_opening": "", 
 			"date_closing": "", 
 			"writer": "",
 			"date_event": "",
-			"artist": "Sloth Racket", 
-			"label": "Luminous", 
-			"text": "With this fourth album in two years, Cath Roberts Sloth Racket consolidate what has by now become a recognisable MO. Essentially, with Roberts compositions, its all about how the quintet find their way to the inevitable riff.",
-			"img_thumb": "https://picsum.photos/id/1019/60", 
-			"img_main": "https://picsum.photos/id/1019/300/200",
-			"timestamp": "2021-03-28 11:23:22.894148"
+			"artist": "Irreversible Entanglements",
+			"label": "International Anthem Recording Company/Don Giovanni Records",
+			"text": "<p>On <span class=\\"title\\">Open the Gates</span> Irreversible Entanglements take us on a trip through space and time via poetry and jazz, Latin and Afro-Carribbean beats, avant-garde free improvisation and other-worldly electronics. It&#8217;s an enthralling journey.</p><p>A collective of five individuals&#8212;poets, musicians and activists&#8212;the band came together organically through combined working relationships and friendships. They see their mission as cultivating &#8220;the liberation technologies of jazz and associated Black music&#8212;root, stem and branch&#8212;into the future&#8221;.</p><p>This, their third album&#8212;recorded in a single day&#8212;ranges in mood across its seven tracks from the short title track driven by the irresistible pulse of drummer Tcheser Holmes and bassist Luke Stewart, to the side-long <span class=\\"title\\">Water Meditation</span>, on which the band build from quiet reflection to cacophony and back again.</p><p>The rhythm section is joined by trumpet player Aquiles Navarro, sax player Keir Neuringer and the prolific vocalist Camae Ayewa a.k.a. Moor Mother, who all contribute synths and occasional electronics to the band&#8217;s sound.</p><p>While listening to Navarro and Neuringer on <span class=\\"title\\">Storm Came Twice</span> I&#8217;m reminded of the gloriously skewed harmony between Ornette Coleman and Don Cherry on <span class=\\"title\\">Lonely Woman</span> recorded back in 1959. On <span class=\\"title\\">Water Meditation</span> the two blow hard while electronic sounds conjure up thunder as that track reaches its peak.</p><p>Through it all Ayewa draws the strands together with her spoken words. <span class=\\"title\\">Open the Gates</span> kicks off with a statement of intent: &#8220;We arrive, energy time. Universal sound law, not guilty, not doing time, unbound.&#8221;</p><p>While the words summon up intense feelings of history, of creation, of the interconnectedness of everything Ayewa grounds it with references to antecedents in jazz history like Ella Fitzgerald, Billie Holliday and Nina Simone.</p><p>History too of the slave trade is at the heart of <span class=\\"title\\">The Port Remembers</span>. As the images of Edward Colston&#8217;s plunge into the harbour crossed the globe she is inspired to speak of &#8220;Cotton from America, blood from Bristol&#8221;.</p><p>There&#8217;s a real feeling of urgency to this music. As they closed their set at the London Jazz Festival late last year Ayewa gently berated her audience: &#8220;You gotta wake up. I know London is full of dead people but some of us are still alive.&#8221; Listening to this thrilling album will make you feel very much alive.</p>",
+			"img_thumb": "/images/open-the-gates.jpg",
+			"img_main": "/images/irreversible-entanglements.jpg",
+			"timestamp": "2022-02-16"
 		}
 	]
 }`

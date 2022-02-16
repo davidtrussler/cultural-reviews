@@ -29,7 +29,7 @@ class Review {
 		}
 
 		html += `</ul>`
-		html += `<p>${this.data.text}</p>`
+		html += `${this.data.text}`
 
 		return html;
 	}
