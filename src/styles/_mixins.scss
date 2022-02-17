@@ -20,3 +20,21 @@
     height: 0;
   }
 }
+
+@mixin medium {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+@mixin title {
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.125;
+}
+
+@mixin extra {
+  font-size: 0.875rem;
+}

@@ -43,10 +43,12 @@ const AppMain = {
 				break;
 			case 'review':
 				return (
-					`<p><a href="/">Back to reviews</a></p>
-					<article>
-						${getReview(data)}
-					</article>`
+					`<div class="review constrained">
+						<p class="review__back-link"><a href="/">Back to reviews</a></p>
+						<article class="review__content">
+							${getReview(data)}
+						</article>
+					</div>`
 				)
 				break;
 			default:

@@ -10,26 +10,35 @@ class Review {
 	getReview() {
 		let html = ``;
 
-		html += `<p>${this.values.medium}</p>`;
-		html += `<img src="${this.values.img_main}" alt="" style="width:100%"/>`;
-		html += `<ul>`;
-		html += `<li>${this.values.title}</li>`;
-		html += `<li>${this.values.extra}</li>`;
+		html += `<p class="review__medium">${this.values.medium}</p>`;
+		html +=
+			`<div class="review__heading">
+				<div class="review__image">
+					<img src="${this.values.img_main}" alt=""/>
+				</div>
+				<ul class="review__details">`;
+		html += `<li class="review__title">${this.values.title}</li>`;
+		html += `<li class="review__extra">${this.values.extra}</li>`;
 
 		if (this.values.extra_2) {
-			html += `<li>${this.values.extra_2}</li>`
+			html += `<li class="review__extra-2">${this.values.extra_2}</li>`
 		}
 
 		if (this.values.extra_3) {
-			html += `<li>${this.values.extra_3}</li>`
+			html += `<li class="review__extra-3>${this.values.extra_3}</li>`
 		}
 
 		if (this.values.extra_4) {
-			html += `<li>${this.values.extra_4}</li>`
+			html += `<li class="review__extra-4>${this.values.extra_4}</li>`
 		}
 
-		html += `</ul>`
-		html += `${this.data.text}`
+		html +=
+				`</ul>
+			</div>`
+		html +=
+			`<div class="review__text">
+				${this.data.text}
+			</div>`
 
 		return html;
 	}
