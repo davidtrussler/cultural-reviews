@@ -1,0 +1,11 @@
+main {
+  @include clearfix;
+
+  // background: $colour-black;
+  // color: $colour-white;
+  padding: 1rem 0;
+}
+
+.main__inner {
+  @include column(12);
+}
