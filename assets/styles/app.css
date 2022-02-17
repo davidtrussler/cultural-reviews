@@ -68,4 +68,254 @@ a {
   font-style: italic;
 }
 
+header {
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 0;
+}
+header:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.header__inner {
+  display: inline;
+  float: left;
+  width: 96.6666666667%;
+  margin-left: 1.6666666667%;
+  margin-right: 1.6666666667%;
+}
+
+.header__title {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin: 0 0 0.25rem;
+}
+
+.header__subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.125;
+}
+
+footer {
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 0;
+}
+footer:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.footer__inner {
+  display: inline;
+  float: left;
+  width: 96.6666666667%;
+  margin-left: 1.6666666667%;
+  margin-right: 1.6666666667%;
+}
+
+.footer__copywrite {
+  font-size: 0.75rem;
+  text-align: right;
+  margin-bottom: 0;
+}
+
+main {
+  padding: 1rem 0;
+}
+main:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.main__inner {
+  display: inline;
+  float: left;
+  width: 96.6666666667%;
+  margin-left: 1.6666666667%;
+  margin-right: 1.6666666667%;
+}
+
+.reviews-list {
+  margin: 1rem 0 0;
+}
+
+.reviews-listing:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.reviews-listing .listing__image, .reviews-listing .listing__content {
+  float: left;
+}
+.reviews-listing .listing__image {
+  width: 80px;
+}
+.reviews-listing .listing__image img {
+  display: block;
+  width: 100%;
+}
+.reviews-listing .listing__content {
+  width: calc(98.33333% - 80px);
+  margin: 0 0 0 1.66667%;
+}
+.reviews-listing .listing__content p {
+  margin-bottom: 0;
+  line-height: 1.125;
+}
+.reviews-listing .listing__content .listing__medium {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.reviews-listing .listing__content .listing__title {
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.125;
+}
+.reviews-listing .listing__content .listing__extra {
+  font-size: 0.875rem;
+}
+
+.review__back-link,
+.review__content {
+  display: inline;
+  float: left;
+  width: 96.6666666667%;
+  margin-left: 1.6666666667%;
+  margin-right: 1.6666666667%;
+}
+
+.review__back-link {
+  margin-bottom: 1rem;
+}
+
+.review__medium {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.review__title {
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.125;
+}
+
+.review__extra,
+.review__extra-2 {
+  font-size: 0.875rem;
+}
+
+.review__image {
+  width: 103.33334%;
+  margin-left: -1.66667%;
+  margin-right: -1.66667%;
+}
+.review__image img {
+  display: block;
+  width: 100%;
+}
+
+.review__heading {
+  margin: 0.5rem 0;
+}
+.review__heading:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.review__details {
+  margin: 0.5rem 0 0;
+}
+.review__details > * {
+  margin: 0 0 0.25rem;
+  padding: 0 0 0.25rem;
+  border-bottom: solid 1px #999;
+}
+
+.review__text {
+  clear: left;
+}
+
+@media screen and (min-width: 30em) {
+  .review__heading {
+    margin-left: -1.66667%;
+    margin-right: -1.66667%;
+  }
+
+  .review__image,
+.review__details {
+    display: inline;
+    float: left;
+    width: 46.6666666667%;
+    margin-left: 1.6666666667%;
+    margin-right: 1.6666666667%;
+  }
+
+  .review__details {
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 45em) {
+  .review__image {
+    display: inline;
+    float: left;
+    width: 38.3333333333%;
+    margin-left: 1.6666666667%;
+    margin-right: 1.6666666667%;
+  }
+
+  .review__details {
+    display: inline;
+    float: left;
+    width: 55%;
+    margin-left: 1.6666666667%;
+    margin-right: 1.6666666667%;
+  }
+}
+@media screen and (min-width: 60em) {
+  .review__image {
+    display: inline;
+    float: left;
+    width: 30%;
+    margin-left: 1.6666666667%;
+    margin-right: 1.6666666667%;
+  }
+
+  .review__details {
+    display: inline;
+    float: left;
+    width: 63.3333333333%;
+    margin-left: 1.6666666667%;
+    margin-right: 1.6666666667%;
+  }
+}
+
 /*# sourceMappingURL=app.css.map */
