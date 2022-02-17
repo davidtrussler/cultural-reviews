@@ -10,7 +10,7 @@ const AppMain = {
 
 			reviews.map((review) => {
 				listing = new Listing(review)
-				html += `<li>${listing.getReview()}</li>`
+				html += `<li class="reviews-listing">${listing.getReview()}</li>`
 			})
 
 			return html
@@ -27,12 +27,12 @@ const AppMain = {
 				return (
 					`<div class="constrained">
 						<div class="main__inner">
-							<section>
+							<section class="introduction">
 								<p>Alright so Bob Dylan wasn&#8217;t impressed with his critics, as expressed in his song <span class="title">Ballad of a Thin Man</span>. Troubadours rarely are. But I&#8217;ve paraphrased his song title to name my reviews site nonetheless because it feels right.</p>
 								<p>I&#8217;m David Trussler and the arts and culture have always been a major part of my life. So I thought I&#8217;d start writing about culture in all its forms. I want to share my enthusiasm for what it can do for us, and occasionally when it maybe doesn&#8217;t quite pull it off.</p>
 								<p>I like to think I have some idea of what&#8217;s going on here.</p>
 							</section>
-							<section>
+							<section class="reviews-list">
 								<ul>
 									${getAllReviews(data)}
 								</ul>
