@@ -1,0 +1,24 @@
+header {
+  @include clearfix;
+
+  background: $colour-black;
+  color: $colour-white;
+  padding: 0.5rem 0;
+}
+
+.header__inner {
+  @include column(12);
+}
+
+.header__title {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin: 0 0 0.25rem;
+}
+
+.header__subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.125;
+}
