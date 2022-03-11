@@ -4,7 +4,7 @@ const AppFooter = {
 			`
 				<div class="constrained">
 					<div class="footer__inner">
-						<p class="footer__copywrite">&#169; David Trussler 2021</p>
+						<p class="footer__copywrite">&#169; David Trussler 2022</p>
 					</div>
 				</div>
 			`
