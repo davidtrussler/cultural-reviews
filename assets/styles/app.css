@@ -43,7 +43,13 @@ table {
   border-spacing: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
   line-height: 1;
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 }
@@ -69,6 +75,7 @@ a {
 }
 
 header {
+  flex-grow: 0;
   background: #000;
   color: #fff;
   padding: 0.5rem 0;
@@ -104,6 +111,7 @@ header:after {
 }
 
 footer {
+  flex-grow: 0;
   background: #000;
   color: #fff;
   padding: 0.5rem 0;
@@ -132,6 +140,7 @@ footer:after {
 }
 
 main {
+  flex-grow: 1;
   padding: 1rem 0;
 }
 main:after {

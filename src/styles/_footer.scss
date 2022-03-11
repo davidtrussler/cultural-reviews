@@ -1,6 +1,7 @@
 footer {
   @include clearfix;
 
+  flex-grow: 0;
   background: $colour-black;
   color: $colour-white;
   padding: 0.5rem 0;
