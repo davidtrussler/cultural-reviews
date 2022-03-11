@@ -9,10 +9,17 @@ class Listing {
 	getReview() {
 		return `
 			<a href="/review/${this.values.id}">
-				<img src="${this.values.img_thumb}" alt="" width="60"/>
-				<span>${this.values.medium}</span>
-				<span>${this.values.title}</span>
-				<span>${this.values.extra}</span>
+				<div class="listing__image">
+					<img
+						src="${this.values.img_thumb}"
+						alt=""
+					/>
+				</div>
+				<div class="listing__content">
+					<p class="listing__medium">${this.values.medium}</p>
+					<p class="listing__title">${this.values.title}</p>
+					<p class="listing__extra">${this.values.extra}</p>
+				</div>
 			</a>
 		`
 	}

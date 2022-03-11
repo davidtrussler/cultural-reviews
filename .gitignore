@@ -1,4 +1,5 @@
 node_modules
+assets/styles/app.css.map
 .env
 .DS_Store
 */.DS_Store

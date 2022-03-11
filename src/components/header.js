@@ -2,8 +2,12 @@ const	AppHeader = {
 	getHtml() {
 		return (
 			`
-				<h1>Cultural Reviews</h1>
-				<h2>A trip through my cultural life</h2>
+				<div class="constrained">
+					<div class="header__inner">
+						<h1 class="header__title">Thoughts of a thin man</h1>
+						<h2 class="header__subtitle">Some observations about art, music, books, cinema and theatre</h2>
+					</div>
+				</div>
 			`
 		)
 	}
