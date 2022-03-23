@@ -1,90 +1,96 @@
-.review {}
-
-.review__back-link, 
-.review__content {
-  @include column(12);
-}
-
-.review__back-link {
-  margin-bottom: 1rem;
-}
-
-.review__medium {
-  @include medium;
-}
-
-.review__title {
-  @include title;
-}
-
-.review__extra, 
-.review__extra-2 {
-  @include extra;
-}
-
-.review__image {
-  width: calc(100% + ($default-gutter * 2));
-  margin-left: calc(0% - $default-gutter);
-  margin-right: calc(0% - $default-gutter);
-
-  img {
-    display: block;
-    width: 100%;
+.review {
+  .review__back-link,
+  .review__content {
+    @include column(12);
   }
-}
 
-.review__heading {
-  @include clearfix;
-
-  margin: 0.5rem 0;
-}
-
-.review__details {
-  margin: 0.5rem 0 0;
-
-  & > * {
-    margin: 0 0 0.25rem;
-    padding: 0 0 0.25rem;
-    border-bottom: solid 1px $colour-grey;
+  .review__back-link {
+    margin-bottom: 1rem;
   }
-}
 
-.review__text {
-  clear: left;
-}
+  .review__medium {
+    @include medium;
+  }
 
-@include respond-to($mq-s) {
-  .review__heading {
+  .review__title {
+    @include title;
+  }
+
+  .review__extra,
+  .review__extra-2 {
+    @include extra;
+  }
+
+  .review__image {
+    width: calc(100% + ($default-gutter * 2));
     margin-left: calc(0% - $default-gutter);
     margin-right: calc(0% - $default-gutter);
+
+    img {
+      display: block;
+      width: 100%;
+    }
   }
 
-  .review__image, 
+  .review__heading {
+    @include clearfix;
+
+    margin: 0.5rem 0;
+  }
+
   .review__details {
-    @include column(6);
+    margin: 0.5rem 0 0;
+
+    & > * {
+      margin: 0 0 0.25rem;
+      padding: 0 0 0.25rem;
+      border-bottom: solid 1px $colour-grey;
+    }
   }
 
-  .review__details {
-    margin-top: 0;
+  .review__text {
+    clear: left;
   }
-}
 
-@include respond-to($mq-m) {
   .review__image {
-    @include column(5);
+    @include image-fit;
+
+    aspect-ratio: 1.45;
   }
 
-  .review__details {
-    @include column(7);
-  }  
-}
+  @include respond-to($mq-s) {
+    .review__heading {
+      margin-left: calc(0% - $default-gutter);
+      margin-right: calc(0% - $default-gutter);
+    }
 
-@include respond-to($mq-l) {
-  .review__image {
-    @include column(4);
+    .review__image,
+    .review__details {
+      @include column(6);
+    }
+
+    .review__details {
+      margin-top: 0;
+    }
   }
 
-  .review__details {
-    @include column(8);
-  }  
+  @include respond-to($mq-m) {
+    .review__image {
+      @include column(5);
+    }
+
+    .review__details {
+      @include column(7);
+    }
+  }
+
+  @include respond-to($mq-l) {
+    .review__image {
+      @include column(4);
+    }
+
+    .review__details {
+      @include column(8);
+    }
+  }
 }

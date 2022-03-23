@@ -212,52 +212,46 @@ main:after {
   font-size: 0.875rem;
 }
 
-.review__back-link,
-.review__content {
+.review .review__back-link,
+.review .review__content {
   display: inline;
   float: left;
   width: 96.6666666667%;
   margin-left: 1.6666666667%;
   margin-right: 1.6666666667%;
 }
-
-.review__back-link {
+.review .review__back-link {
   margin-bottom: 1rem;
 }
-
-.review__medium {
+.review .review__medium {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-weight: 800;
   font-size: 0.75rem;
   text-transform: uppercase;
   line-height: 1;
 }
-
-.review__title {
+.review .review__title {
   font-size: 1.25rem;
   font-style: italic;
   line-height: 1.125;
 }
-
-.review__extra,
-.review__extra-2 {
+.review .review__extra,
+.review .review__extra-2 {
   font-size: 0.875rem;
 }
-
-.review__image {
+.review .review__image {
   width: 103.33334%;
   margin-left: -1.66667%;
   margin-right: -1.66667%;
 }
-.review__image img {
+.review .review__image img {
   display: block;
   width: 100%;
 }
-
-.review__heading {
+.review .review__heading {
   margin: 0.5rem 0;
 }
-.review__heading:after {
+.review .review__heading:after {
   content: ".";
   display: block;
   clear: both;
@@ -265,49 +259,55 @@ main:after {
   line-height: 0;
   height: 0;
 }
-
-.review__details {
+.review .review__details {
   margin: 0.5rem 0 0;
 }
-.review__details > * {
+.review .review__details > * {
   margin: 0 0 0.25rem;
   padding: 0 0 0.25rem;
   border-bottom: solid 1px #999;
 }
-
-.review__text {
+.review .review__text {
   clear: left;
 }
-
+.review .review__image {
+  aspect-ratio: 1.45;
+}
+.review .review__image img {
+  width: 100%;
+}
+@supports (object-fit: cover) {
+  .review .review__image img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
 @media screen and (min-width: 30em) {
-  .review__heading {
+  .review .review__heading {
     margin-left: -1.66667%;
     margin-right: -1.66667%;
   }
-
-  .review__image,
-.review__details {
+  .review .review__image,
+.review .review__details {
     display: inline;
     float: left;
     width: 46.6666666667%;
     margin-left: 1.6666666667%;
     margin-right: 1.6666666667%;
   }
-
-  .review__details {
+  .review .review__details {
     margin-top: 0;
   }
 }
 @media screen and (min-width: 45em) {
-  .review__image {
+  .review .review__image {
     display: inline;
     float: left;
     width: 38.3333333333%;
     margin-left: 1.6666666667%;
     margin-right: 1.6666666667%;
   }
-
-  .review__details {
+  .review .review__details {
     display: inline;
     float: left;
     width: 55%;
@@ -316,15 +316,14 @@ main:after {
   }
 }
 @media screen and (min-width: 60em) {
-  .review__image {
+  .review .review__image {
     display: inline;
     float: left;
     width: 30%;
     margin-left: 1.6666666667%;
     margin-right: 1.6666666667%;
   }
-
-  .review__details {
+  .review .review__details {
     display: inline;
     float: left;
     width: 63.3333333333%;
