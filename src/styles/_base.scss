@@ -3,11 +3,18 @@ html, body {
 }
 
 body {
+  // display: -ms-grid;
   display: flex;
   flex-direction: column;
   line-height: 1;
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 }
+
+// .body__inner {
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+// }
 
 p, li {
   line-height: 1.5;
@@ -21,7 +28,8 @@ a {
 
 .constrained {
   max-width: px(1200); 
-  width: 100%; 
+  // width: 100%; 
+  width: calc(100% - ($outer-margin * 2));
   margin: 0 auto;
 }
 
