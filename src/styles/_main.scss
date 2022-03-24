@@ -1,5 +1,7 @@
 main {
-  @include clearfix;
+  // @include clearfix;
+  
+  // display: -ms-grid;
 
   flex-grow: 1;
   padding: 1rem 0;
@@ -7,4 +9,7 @@ main {
 
 .main__inner {
   // @include column(12);
+  // display: -ms-grid;
+  // display: grid;
+  // width: calc(100% - ($gutter * 2));
 }
