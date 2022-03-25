@@ -15,12 +15,6 @@
       text-decoration: none;
     }
 
-    .listing__image,
-    .listing__content {
-      // float: left;
-      // display: inline-block;
-    }
-
     .listing__image {
       @include image-fit;
 
@@ -32,17 +26,6 @@
 
     .listing__content {
       -ms-grid-column: 2;
-
-      // width: calc((100% - $gutter) - $image-size);
-      // margin: 0 0 0 $default-gutter;
-      
-      // width: 100%;
-      // padding: 0 0 0 calc($image-size + $gutter);
-      
-      // @supports (grid-template-columns: auto) {
-      //   width: auto;
-      //   padding-left: 0;
-      // }
 
       p {
         margin-bottom: 0;
