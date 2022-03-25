@@ -1,7 +1,7 @@
 .review {
   .review__back-link,
   .review__content {
-    @include column(12);
+    // @include column(12);
   }
 
   .review__back-link {
@@ -22,9 +22,9 @@
   }
 
   .review__image {
-    width: calc(100% + ($default-gutter * 2));
-    margin-left: calc(0% - $default-gutter);
-    margin-right: calc(0% - $default-gutter);
+    width: calc(100% + ($gutter * 2));
+    margin-left: calc(0% - $gutter);
+    margin-right: calc(0% - $gutter);
 
     img {
       display: block;
