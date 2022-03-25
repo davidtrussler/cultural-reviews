@@ -6,21 +6,26 @@
   .reviews-listing {
     @include clearfix;
 
-    .listing__image, .listing__content {
-      float: left;
+    .listing__item {
+      display: -ms-grid;
+      -ms-grid-columns: $image-size auto;
+      display: grid;
+      grid-template-columns: $image-size auto;
+      column-gap: $gutter;
+      text-decoration: none;
     }
 
     .listing__image {
       @include image-fit;
 
+      -ms-grid-column: 1;
       width: $image-size;
       height: $image-size;
       overflow: hidden;
     }
 
     .listing__content {
-      width: calc(100% - $default-gutter - $image-size);
-      margin: 0 0 0 $default-gutter;
+      -ms-grid-column: 2;
 
       p {
         margin-bottom: 0;

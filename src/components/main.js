@@ -25,7 +25,7 @@ const AppMain = {
 		switch (page) {
 			case 'home':
 				return (
-					`<div class="constrained">
+					`<div class="container">
 						<div class="main__inner">
 							<section class="introduction">
 								<p>Alright so Bob Dylan wasn&#8217;t impressed with critics, as expressed in his song <span class="title">Ballad of a Thin Man</span>. Troubadours rarely are. But I&#8217;ve paraphrased his song title to name my reviews site nonetheless because it feels right.</p>
@@ -44,7 +44,7 @@ const AppMain = {
 				break;
 			case 'review':
 				return (
-					`<div class="review constrained">
+					`<div class="review container">
 						<p class="review__back-link"><a href="/">Back to reviews</a></p>
 						<article class="review__content">
 							${getReview(data)}

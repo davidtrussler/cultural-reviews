@@ -7,10 +7,6 @@ footer {
   padding: 0.5rem 0;
 }
 
-.footer__inner {
-  @include column(12);
-}
-
 .footer__copywrite {
   font-size: 0.75rem;
   text-align: right;

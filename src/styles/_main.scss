@@ -1,10 +1,6 @@
 main {
   @include clearfix;
-
+  
   flex-grow: 1;
   padding: 1rem 0;
-}
-
-.main__inner {
-  @include column(12);
 }

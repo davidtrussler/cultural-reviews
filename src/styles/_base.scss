@@ -19,9 +19,9 @@ a {
   color: black;
 }
 
-.constrained {
+.container {
   max-width: px(1200); 
-  width: 100%; 
+  width: calc(100% - ($outer-margin * 2));
   margin: 0 auto;
 }
 

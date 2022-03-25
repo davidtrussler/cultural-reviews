@@ -1,9 +1,4 @@
 .review {
-  .review__back-link,
-  .review__content {
-    @include column(12);
-  }
-
   .review__back-link {
     margin-bottom: 1rem;
   }
@@ -22,9 +17,9 @@
   }
 
   .review__image {
-    width: calc(100% + ($default-gutter * 2));
-    margin-left: calc(0% - $default-gutter);
-    margin-right: calc(0% - $default-gutter);
+    width: calc(100% + ($gutter * 2));
+    margin-left: calc(0% - $gutter);
+    margin-right: calc(0% - $gutter);
 
     img {
       display: block;
@@ -60,37 +55,41 @@
 
   @include respond-to($mq-s) {
     .review__heading {
-      margin-left: calc(0% - $default-gutter);
-      margin-right: calc(0% - $default-gutter);
+      display: -ms-grid;
+      -ms-grid-columns: 1fr 1fr;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: $gutter;
     }
 
     .review__image,
     .review__details {
-      @include column(6);
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .review__image {
+      -ms-grid-column: 1;
     }
 
     .review__details {
       margin-top: 0;
+      -ms-grid-column: 2;
     }
   }
 
   @include respond-to($mq-m) {
-    .review__image {
-      @include column(5);
-    }
-
-    .review__details {
-      @include column(7);
+    .review__heading {
+      -ms-grid-columns: 5fr 7fr;
+      grid-template-columns: 5fr 7fr;
     }
   }
 
   @include respond-to($mq-l) {
-    .review__image {
-      @include column(4);
-    }
-
-    .review__details {
-      @include column(8);
+    .review__heading {
+      -ms-grid-columns: 4fr 8fr;
+      grid-template-columns: 4fr 8fr;
     }
   }
 }
