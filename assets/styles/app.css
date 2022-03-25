@@ -64,7 +64,7 @@ a {
   color: black;
 }
 
-.constrained {
+.container {
   max-width: 75em;
   width: calc(100% - 2% * 2);
   margin: 0 auto;
