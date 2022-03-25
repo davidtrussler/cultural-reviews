@@ -60,37 +60,62 @@
 
   @include respond-to($mq-s) {
     .review__heading {
-      margin-left: calc(0% - $default-gutter);
-      margin-right: calc(0% - $default-gutter);
+      // margin-left: calc(0% - $default-gutter);
+      // margin-right: calc(0% - $default-gutter);
+      display: -ms-grid;
+      -ms-grid-columns: 1fr 1fr;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: $gutter;
     }
 
     .review__image,
     .review__details {
-      @include column(6);
+      // @include column(6);
+      width: 100%; // calc(100% + ($gutter * 2));
+      margin-left: 0; // calc(0% - $gutter);
+      margin-right: 0; // calc(0% - $gutter);
+    }
+
+    .review__image {
+      -ms-grid-column: 1;
+      // padding-right: calc($gutter / 2);
     }
 
     .review__details {
       margin-top: 0;
+      -ms-grid-column: 2;
+      // padding-left: calc($gutter / 2);
     }
   }
 
   @include respond-to($mq-m) {
+    .review__heading {
+      -ms-grid-columns: 5fr 7fr;
+      grid-template-columns: 5fr 7fr;
+    }
+
     .review__image {
-      @include column(5);
+      // @include column(5);
     }
 
     .review__details {
-      @include column(7);
+      // @include column(7);
     }
   }
 
   @include respond-to($mq-l) {
-    .review__image {
-      @include column(4);
+    .review__heading {
+      -ms-grid-columns: 4fr 8fr;
+      grid-template-columns: 4fr 8fr;
     }
 
-    .review__details {
-      @include column(8);
-    }
+    // .review__image {
+    //   @include column(4);
+    // }
+
+    // .review__details {
+    //   @include column(8);
+    // }
   }
 }
