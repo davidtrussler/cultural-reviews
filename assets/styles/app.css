@@ -78,6 +78,7 @@ a {
 
 header {
   flex-grow: 0;
+  flex-shrink: 0;
   background: #000;
   color: #fff;
   padding: 0.5rem 0;
@@ -106,6 +107,7 @@ header:after {
 
 footer {
   flex-grow: 0;
+  flex-shrink: 0;
   background: #000;
   color: #fff;
   padding: 0.5rem 0;
@@ -127,6 +129,7 @@ footer:after {
 
 main {
   flex-grow: 1;
+  flex-shrink: 0;
   padding: 1rem 0;
 }
 main:after {
