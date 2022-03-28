@@ -2,13 +2,10 @@ footer {
   @include clearfix;
 
   flex-grow: 0;
+  flex-shrink: 0;
   background: $colour-black;
   color: $colour-white;
   padding: 0.5rem 0;
-}
-
-.footer__inner {
-  @include column(12);
 }
 
 .footer__copywrite {

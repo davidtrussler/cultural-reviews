@@ -25,11 +25,11 @@ class Review {
 		}
 
 		if (this.values.extra_3) {
-			html += `<li class="review__extra-3>${this.values.extra_3}</li>`
+			html += `<li class="review__extra-3">${this.values.extra_3}</li>`
 		}
 
 		if (this.values.extra_4) {
-			html += `<li class="review__extra-4>${this.values.extra_4}</li>`
+			html += `<li class="review__extra-4">${this.values.extra_4}</li>`
 		}
 
 		html +=

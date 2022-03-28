@@ -1,90 +1,95 @@
-.review {}
-
-.review__back-link, 
-.review__content {
-  @include column(12);
-}
-
-.review__back-link {
-  margin-bottom: 1rem;
-}
-
-.review__medium {
-  @include medium;
-}
-
-.review__title {
-  @include title;
-}
-
-.review__extra, 
-.review__extra-2 {
-  @include extra;
-}
-
-.review__image {
-  width: calc(100% + ($default-gutter * 2));
-  margin-left: calc(0% - $default-gutter);
-  margin-right: calc(0% - $default-gutter);
-
-  img {
-    display: block;
-    width: 100%;
+.review {
+  .review__back-link {
+    margin-bottom: 1rem;
   }
-}
 
-.review__heading {
-  @include clearfix;
-
-  margin: 0.5rem 0;
-}
-
-.review__details {
-  margin: 0.5rem 0 0;
-
-  & > * {
-    margin: 0 0 0.25rem;
-    padding: 0 0 0.25rem;
-    border-bottom: solid 1px $colour-grey;
+  .review__medium {
+    @include medium;
   }
-}
 
-.review__text {
-  clear: left;
-}
+  .review__title {
+    @include title;
+  }
 
-@include respond-to($mq-s) {
+  .review__extra,
+  .review__extra-2 {
+    @include extra;
+  }
+
+  .review__image {
+    width: calc(100% + ($gutter * 2));
+    margin-left: calc(0% - $gutter);
+    margin-right: calc(0% - $gutter);
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
   .review__heading {
-    margin-left: calc(0% - $default-gutter);
-    margin-right: calc(0% - $default-gutter);
-  }
+    @include clearfix;
 
-  .review__image, 
-  .review__details {
-    @include column(6);
+    margin: 0.5rem 0;
   }
 
   .review__details {
-    margin-top: 0;
-  }
-}
+    margin: 0.5rem 0 0;
 
-@include respond-to($mq-m) {
+    & > * {
+      margin: 0 0 0.25rem;
+      padding: 0 0 0.25rem;
+      border-bottom: solid 1px $colour-grey;
+    }
+  }
+
+  .review__text {
+    clear: left;
+  }
+
   .review__image {
-    @include column(5);
+    @include image-fit;
+
+    aspect-ratio: 1.45;
   }
 
-  .review__details {
-    @include column(7);
-  }  
-}
+  @include respond-to($mq-s) {
+    .review__heading {
+      display: -ms-grid;
+      -ms-grid-columns: 1fr 1fr;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: $gutter;
+    }
 
-@include respond-to($mq-l) {
-  .review__image {
-    @include column(4);
+    .review__image,
+    .review__details {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .review__image {
+      -ms-grid-column: 1;
+    }
+
+    .review__details {
+      margin-top: 0;
+      -ms-grid-column: 2;
+    }
   }
 
-  .review__details {
-    @include column(8);
-  }  
+  @include respond-to($mq-m) {
+    .review__heading {
+      -ms-grid-columns: 5fr 7fr;
+      grid-template-columns: 5fr 7fr;
+    }
+  }
+
+  @include respond-to($mq-l) {
+    .review__heading {
+      -ms-grid-columns: 4fr 8fr;
+      grid-template-columns: 4fr 8fr;
+    }
+  }
 }
