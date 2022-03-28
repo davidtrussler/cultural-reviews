@@ -8,7 +8,7 @@ class Listing {
 
 	getReview() {
 		return `
-			<a href="/review/${this.values.id}" class="listing__item">
+			<a href="/review/${this.values.id}/${this.values.title.toLowerCase().replaceAll(' ', '-')}" class="listing__item">
 				<div class="listing__image">
 					<img
 						src="${this.values.img_thumb}"
