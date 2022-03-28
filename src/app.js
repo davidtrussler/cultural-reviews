@@ -27,7 +27,7 @@ const createSSRApp = function(url) {
 const buildMarkup = function(data) {
 	let html = `
 		<html lang="en-GB">
-			<head>${AppHead.getHtml(page)}</head>
+			<head>${AppHead.getHtml(page, data)}</head>
 			<body>
 				<header>${AppHeader.getHtml()}</header>
 				<main>${AppMain.getHtml(page, data)}</main>
