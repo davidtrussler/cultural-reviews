@@ -25,6 +25,16 @@ cite {
   font-style: italic;
 }
 
+q {
+  &:before {
+    content: '\201C';
+  }
+
+  &:after {
+    content: '\201D';
+  }
+}
+
 .container {
   max-width: px(1200); 
   width: calc(100% - ($outer-margin * 2));
