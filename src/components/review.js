@@ -18,7 +18,7 @@ class Review {
 					<img src="${this.values.img_main}" alt=""/>`;
 
 		if (this.values.img_main_caption) {
-			html += `<figcaption>${this.values.img_main_caption}</figcaption>`;
+			html += `<figcaption class="image__caption">${this.values.img_main_caption}</figcaption>`;
 		}
 
 		html +=
