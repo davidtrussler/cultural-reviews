@@ -13,9 +13,10 @@ class Review {
 		html += `<p class="review__medium">${this.values.medium}</p>`;
 		html +=
 			`<div class="review__heading">
-				<div class="review__image">
+				<figure class="review__image">
 					<img src="${this.values.img_main}" alt=""/>
-				</div>
+					<figcaption>A caption</figcaption>
+				</figure>
 				<ul class="review__details">`;
 		html += `<li class="review__title">${this.values.title}</li>`;
 		html += `<li class="review__extra">${this.values.extra}</li>`;
