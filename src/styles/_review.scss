@@ -16,17 +16,6 @@
     @include extra;
   }
 
-  .review__image {
-    width: calc(100% + ($gutter * 2));
-    margin-left: calc(0% - $gutter);
-    margin-right: calc(0% - $gutter);
-
-    img {
-      display: block;
-      width: 100%;
-    }
-  }
-
   .review__heading {
     @include clearfix;
 
@@ -50,7 +39,19 @@
   .review__image {
     @include image-fit;
 
-    aspect-ratio: 1.45;
+    img {
+      aspect-ratio: 1.45;
+      width: calc(100% + ($gutter * 2));
+      margin-left: calc(0% - $gutter);
+      margin-right: calc(0% - $gutter);
+    }
+
+    .image__caption {
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      font-size: 0.75rem;
+      margin: 0.25rem 0 0;
+    }
   }
 
   @include respond-to($mq-s) {
@@ -71,6 +72,12 @@
 
     .review__image {
       -ms-grid-column: 1;
+
+      img {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
 
     .review__details {

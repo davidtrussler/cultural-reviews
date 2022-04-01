@@ -11,13 +11,22 @@ class Review {
 		let html = ``;
 
 		html += `<p class="review__medium">${this.values.medium}</p>`;
+
 		html +=
 			`<div class="review__heading">
-				<div class="review__image">
-					<img src="${this.values.img_main}" alt=""/>
-				</div>
+				<figure class="review__image">
+					<img src="${this.values.img_main}" alt=""/>`;
+
+		if (this.values.img_main_caption) {
+			html += `<figcaption class="image__caption">${this.values.img_main_caption}</figcaption>`;
+		}
+
+		html +=
+				`</figure>
 				<ul class="review__details">`;
+
 		html += `<li class="review__title">${this.values.title}</li>`;
+
 		html += `<li class="review__extra">${this.values.extra}</li>`;
 
 		if (this.values.extra_2) {
@@ -35,6 +44,7 @@ class Review {
 		html +=
 				`</ul>
 			</div>`
+
 		html +=
 			`<div class="review__text">
 				${this.data.text}

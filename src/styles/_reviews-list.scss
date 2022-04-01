@@ -22,6 +22,10 @@
       width: $image-size;
       height: $image-size;
       overflow: hidden;
+
+      img {
+        aspect-ratio: 1;
+      }
     }
 
     .listing__content {

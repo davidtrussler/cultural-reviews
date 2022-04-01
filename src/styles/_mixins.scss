@@ -41,10 +41,10 @@
 
 @mixin image-fit {
   img {
+    display: block;
     width: 100%;
 
     @supports (object-fit: cover) {
-      height: 100%;
       object-fit: cover;
     }
   }
