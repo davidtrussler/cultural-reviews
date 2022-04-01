@@ -61,7 +61,8 @@ class ListingData {
 			extra_3 = '', 
 			extra_4 = '', 
 			img_thumb = this.review.img_thumb, 
-			img_main = this.review.img_main;
+			img_main = this.review.img_main,
+			img_main_caption = this.review.img_main_caption;
 
 		switch (this.review.medium) {
 			case 'book':
@@ -114,7 +115,8 @@ class ListingData {
 			extra_3: extra_3, 
 			extra_4: extra_4, 
 			img_thumb: img_thumb, 
-			img_main: img_main
+			img_main: img_main,
+			img_main_caption: img_main_caption
 		};
 	}
 }
