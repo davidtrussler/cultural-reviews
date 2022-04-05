@@ -16,9 +16,11 @@ class Listing {
 					/>
 				</div>
 				<div class="listing__content">
-					<p class="listing__medium">${this.values.medium}</p>
-					<p class="listing__title">${this.values.title}</p>
-					<p class="listing__extra">${this.values.extra}</p>
+					<ul class="content__wrapper">
+						<li class="listing__medium">${this.values.medium}</li>
+						<li class="listing__title">${this.values.title}</li>
+						<li class="listing__extra">${this.values.extra}</li>
+					</ul>
 				</div>
 			</a>
 		`

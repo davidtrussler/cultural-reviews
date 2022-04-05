@@ -27,16 +27,20 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   line-height: 1;
+  margin: 0;
 }
 
 @mixin title {
   font-size: 1.25rem;
   font-style: italic;
   line-height: 1.125;
+  margin: 0;
 }
 
 @mixin extra {
   font-size: 0.875rem;
+  line-height: 1.125;
+  margin: 0;
 }
 
 @mixin image-fit {

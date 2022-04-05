@@ -32,8 +32,8 @@ const AppMain = {
 								<p>The arts have always been a major part of my life. So I thought I&#8217;d start writing about culture in all its forms to share my enthusiasm for what it can do for us. I like to think I have some idea of what&#8217;s happening here.</p>
 								<p>David Trussler, March 2022</p>
 							</section>
-							<section class="reviews-list">
-								<ul>
+							<section class="reviews">
+								<ul class="reviews__list">
 									${getAllReviews(data)}
 								</ul>
 							</section>
