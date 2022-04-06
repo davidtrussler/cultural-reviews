@@ -10,7 +10,7 @@ const AppMain = {
 
 			reviews.map((review) => {
 				listing = new Listing(review)
-				html += `<li class="reviews-listing">${listing.getReview()}</li>`
+				html += `<li class="reviews__listing">${listing.getReview()}</li>`
 			})
 
 			return html
