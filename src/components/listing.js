@@ -9,12 +9,10 @@ class Listing {
 	getReview() {
 		return `
 			<a href="/review/${this.values.id}/${this.values.title.toLowerCase().replaceAll(' ', '-')}" class="listing__item">
-				<div class="listing__image">
-					<img
-						src="${this.values.img_thumb}"
-						alt=""
-					/>
-				</div>
+				<div
+					class="listing__image"
+					style="background-image:url('${this.values.img_thumb}')"
+				></div>
 				<div class="listing__content">
 					<ul class="content__wrapper">
 						<li class="content__medium">${this.values.medium}</li>

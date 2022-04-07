@@ -24,12 +24,12 @@
   }
 
   .listing__image {
-    @include image-fit;
-
     -ms-grid-column: 1;
     width: $image-size;
     height: $image-size;
-    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 
     img {
       aspect-ratio: 1;
