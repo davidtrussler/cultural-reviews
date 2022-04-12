@@ -9,6 +9,10 @@ body {
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+
+  * {
+    box-sizing: border-box;
+  }
 }
 
 p, li {
