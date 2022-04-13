@@ -92,14 +92,14 @@ $image-size-aligned-2-col: calc((100% - ($gutter * 2)) / 2);
 
       display: inline-block;
       float: left;
-      width: 50%;
+      width: calc((100% - $gutter) / 2);
 
       &:nth-child(2n) {
-        padding: 0 0 0 calc($gutter / 2);
+        margin: 0 0 0 calc($gutter / 2);
       }
 
       &:nth-child(2n+1) {
-        padding: 0 calc($gutter / 2) 0 0;
+        margin: 0 calc($gutter / 2) 0 0;
         clear: left;
       }
     }
@@ -199,23 +199,23 @@ $image-size-aligned-2-col: calc((100% - ($gutter * 2)) / 2);
     .reviews__listing {
       background: skyblue;
 
-      width: 25%;
+      width: calc((100% - ($gutter * 3)) / 4);
 
       &:nth-child(4n) {
-        padding: 0 0 0 calc($gutter / 2);
+        margin: 0 0 0 calc($gutter / 2);
       }
 
       &:nth-child(4n+1) {
-        padding: 0 calc($gutter / 2) 0 0;
+        margin: 0 calc($gutter / 2) 0 0;
         clear: left;
       }
 
       &:nth-child(4n+2) {
-        padding: 0 calc($gutter / 2);
+        margin: 0 calc($gutter / 2);
       }
 
       &:nth-child(4n+3) {
-        padding: 0 calc($gutter / 2);
+        margin: 0 calc($gutter / 2);
         clear: none;
       }
     }
@@ -226,6 +226,12 @@ $image-size-aligned-2-col: calc((100% - ($gutter * 2)) / 2);
 
     .listing__image {
       @include listingImage($image-size-lm, stacked);
+
+      @supports(display:grid) {
+        width: 100%;
+        height: 0;
+        padding: 0 0 100%;
+      }
     }
   }
 
