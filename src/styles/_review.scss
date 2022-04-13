@@ -28,7 +28,7 @@
     & > * {
       margin: 0 0 0.25rem;
       padding: 0 0 0.25rem;
-      border-bottom: solid 1px $colour-grey;
+      border-bottom: solid 1px $colour-grey-light;
     }
   }
 
@@ -86,14 +86,14 @@
     }
   }
 
-  @include respond-to($mq-m) {
+  @include respond-to($mq-sm) {
     .review__heading {
       -ms-grid-columns: 5fr 7fr;
       grid-template-columns: 5fr 7fr;
     }
   }
 
-  @include respond-to($mq-l) {
+  @include respond-to($mq-lm) {
     .review__heading {
       -ms-grid-columns: 4fr 8fr;
       grid-template-columns: 4fr 8fr;
