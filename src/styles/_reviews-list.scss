@@ -15,6 +15,12 @@ $image-size-aligned-2-col: calc((100% - ($gutter * 2)) / 2);
   height: $imageSize;
   padding: 0;
 
+  @if $layout == aligned {
+    margin-bottom: 0;
+  } @else {
+    margin-bottom: 0.25rem;
+  }
+
   @supports(display: grid) {
     @if $layout == aligned {
       width: 100%;
@@ -25,7 +31,7 @@ $image-size-aligned-2-col: calc((100% - ($gutter * 2)) / 2);
       height: 0;
       padding-bottom: $image-size-stacked;
     }
-  }    
+  }
 }
 
 .reviews {
@@ -33,6 +39,21 @@ $image-size-aligned-2-col: calc((100% - ($gutter * 2)) / 2);
 
   .reviews__listing {
     @include clearfix;
+
+    margin: 0;
+    padding: 0 0 0.5rem;
+
+    @include respond-to($mq-s) {
+      padding-bottom: 0.75rem;
+    }
+
+    @include respond-to($mq-m) {
+      padding-bottom: 1rem;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
 
   .listing__item {
@@ -88,6 +109,10 @@ $image-size-aligned-2-col: calc((100% - ($gutter * 2)) / 2);
       &:nth-child(2n+1) {
         margin: 0 calc($gutter / 2) 0 0;
         clear: left;
+      }
+
+      &:nth-last-child(2) {
+        padding-bottom: 0;
       }
     }
 
@@ -182,6 +207,11 @@ $image-size-aligned-2-col: calc((100% - ($gutter * 2)) / 2);
       &:nth-child(4n+3) {
         margin: 0 calc($gutter / 2);
         clear: none;
+      }
+
+      &:nth-last-child(3),
+      &:nth-last-child(4) {
+        padding-bottom: 0;
       }
     }
 
