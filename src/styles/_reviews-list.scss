@@ -21,15 +21,9 @@ $image-size-aligned-2-col: calc((100% - ($gutter * 2)) / 2);
       height: 0;
       padding: 0 0 100%;
     } @else {
-      // @if $imageSize == $image-size-lm {
-      //   width: $image-size-stacked-2-col;
-      //   height: 0;
-      //   padding-bottom: $image-size-stacked-2-col;
-      // } @else {
-        width: $image-size-stacked;
-        height: 0;
-        padding-bottom: $image-size-stacked;
-      // }
+      width: $image-size-stacked;
+      height: 0;
+      padding-bottom: $image-size-stacked;
     }
   }    
 }
@@ -37,12 +31,7 @@ $image-size-aligned-2-col: calc((100% - ($gutter * 2)) / 2);
 .reviews {
   margin: 1rem 0 0;
 
-  .reviews__list {
-  }
-
   .reviews__listing {
-    background: aqua;
-
     @include clearfix;
   }
 
@@ -88,8 +77,6 @@ $image-size-aligned-2-col: calc((100% - ($gutter * 2)) / 2);
   @include respond-to($mq-xs) {
     // 2 columns, image/content stacked
     .reviews__listing {
-      background: beige;
-
       display: inline-block;
       float: left;
       width: calc((100% - $gutter) / 2);
@@ -115,10 +102,6 @@ $image-size-aligned-2-col: calc((100% - ($gutter * 2)) / 2);
 
   @include respond-to($mq-s) {
     // 2 columns, image/content stacked, image size: s
-    .reviews__listing {
-      background: coral;
-    }
-
     .listing__image {
       @include listingImage($image-size-s, stacked);
     }
@@ -126,10 +109,6 @@ $image-size-aligned-2-col: calc((100% - ($gutter * 2)) / 2);
 
   @include respond-to($mq-sm) {
     // 2 columns, image/content aligned, image size: s
-    .reviews__listing {
-      background: powderblue;
-    }
-
     .listing__item {
       display: -ms-grid;
       -ms-grid-columns: $image-size-sm auto;
@@ -150,10 +129,6 @@ $image-size-aligned-2-col: calc((100% - ($gutter * 2)) / 2);
 
   @include respond-to($mq-m) {
     // 2 columns, image/content aligned, image size: m
-    .reviews__listing {
-      background: peachpuff;
-    }
-
     .listing__item {
       -ms-grid-columns: $image-size-m auto;
     }
@@ -164,11 +139,7 @@ $image-size-aligned-2-col: calc((100% - ($gutter * 2)) / 2);
   }
 
   @include respond-to($mq-lm, portrait) {
-    // 2 columns, image/content aligned, image size: l
-    .reviews__listing {
-      background: khaki;
-    }
-
+    // 2 columns, image/content aligned, image size: lm
     .listing__item {
       -ms-grid-columns: $image-size-lm auto;
     }
@@ -179,11 +150,7 @@ $image-size-aligned-2-col: calc((100% - ($gutter * 2)) / 2);
   }
 
   @include respond-to($mq-l, portrait) {
-    // 2 columns, image/content aligned, image size: xl
-    .reviews__listing {
-      background: rosybrown;
-    }
-
+    // 2 columns, image/content aligned, image size: l
     .listing__item {
       // display: -ms-grid;
       -ms-grid-columns: $image-size-l auto;
@@ -195,10 +162,8 @@ $image-size-aligned-2-col: calc((100% - ($gutter * 2)) / 2);
   }
 
   @include respond-to($mq-lm, landscape) {
-    // 4 columns, image/content stacked, image size: l
+    // 4 columns, image/content stacked, image size: lm
     .reviews__listing {
-      background: skyblue;
-
       width: calc((100% - ($gutter * 3)) / 4);
 
       &:nth-child(4n) {
@@ -236,11 +201,7 @@ $image-size-aligned-2-col: calc((100% - ($gutter * 2)) / 2);
   }
 
   @include respond-to($mq-l, landscape) {
-    // 4 columns, image/content overlap, image size: full width
-    .reviews__listing {
-      background: mintcream;
-    }
-
+    // 4 columns, image/content overlap, image size: l
     .listing__item {
       display: grid;
       grid-template-columns: none;
@@ -251,12 +212,12 @@ $image-size-aligned-2-col: calc((100% - ($gutter * 2)) / 2);
       @include listingImage($image-size-l, stacked);
     }
 
-    .listing__content {
-      grid-column: 1 / 2;
-      grid-row: 2 / 4;
-    }
-
     @supports(grid-column: 1 / 2) {
+      .listing__content {
+        grid-column: 1 / 2;
+        grid-row: 2 / 4;
+      }
+
       .content__wrapper {
         display: inline-block;
         padding: 0.5rem calc($gutter * 2);
