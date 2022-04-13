@@ -28,6 +28,10 @@
   text-transform: uppercase;
   line-height: 1;
   margin: 0;
+
+  @include respond-to($mq-lm) {
+    font-size: 0.875rem;
+  }
 }
 
 @mixin title {
@@ -35,12 +39,20 @@
   font-style: italic;
   line-height: 1.125;
   margin: 0;
+
+  @include respond-to($mq-lm) {
+    font-size: 1.5rem;
+  }
 }
 
 @mixin extra {
   font-size: 0.875rem;
   line-height: 1.125;
   margin: 0;
+
+  @include respond-to($mq-lm) {
+    font-size: 1.125rem;
+  }
 }
 
 @mixin image-fit {
